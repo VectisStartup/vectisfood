@@ -6,6 +6,7 @@ class Servidor{
     }
     static get this() {
         return servidor.host;
+        //
     }
     requisitar(method, router,parametros){
         this.xmlHttpRequest.open(method, host+router,true);
