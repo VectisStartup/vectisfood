@@ -8,6 +8,6 @@ class LojaController{
         this.servidor = new Servidor();
     }
     get obterTodasAsLojas(){
-        this.servidor.requisitar('GET', '')
+        this.servidor.requisitar('GET''')
     }
 }
