@@ -1,3 +1,4 @@
+
 class Loja{
     constructor(){
         this.id;
@@ -28,3 +29,5 @@ class Loja{
     
     
 }
+
+export {Loja};

@@ -1,17 +1,13 @@
 class Servidor{
-    static host='http://localhost/www/vectis/api/v1/';
-    _constructor(){
+    constructor(){
         this.xmlHttpRequest = new XMLHttpRequest();
-
-    }
-    static get this() {
-        return servidor.host;
-        //
-        //
+        this.host='http://localhost/www/vectis/api/v1';
     }
     requisitar(method, router,parametros){
-        this.xmlHttpRequest.open(method, host+router,true);
+        console.log('Host',this.host);
+        this.xmlHttpRequest.open(method, this.host+''+router,true);
         this.xmlHttpRequest.send(parametros);
         return this.xmlHttpRequest;
     }
 }
+export { Servidor };

@@ -1,4 +1,4 @@
-class promocao{
+class Promocao{
     constructor(){
         
         this.id;
@@ -7,3 +7,4 @@ class promocao{
         this.DataTermino;
     }
 }
+export {Promocao};
