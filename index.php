@@ -266,7 +266,7 @@
             $('select').formSelect();
         });
     </script>
-    <script type="module" src="js/index.js"></script>
+    <!--<script type="module" src="js/index.js"></script>-->
     <!------------------- Firebase App is always required and must be first ---------------------->
 
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
