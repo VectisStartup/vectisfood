@@ -1,0 +1,71 @@
+
+<main>
+    <div class=" container" style=" width:90%">
+        <div class="row">
+            <div class="col s12">
+                <h6>KAMBA - Carteira virtual</h6>
+                <p>Use a sua conta do use Kamba para fazer transferências monetárias no Vectis fast Food. Se ainda não tem uma conta, <a href="">crie a sua conta</a>. Se já possue, copie o seu idReceiver e cole na seguite caixa de texto.
+                    Certifique de colocar o id correcto, caso contrário, os pagamentos não cairão na sua conta.</p>
+                <p>Passos a segui:</p>
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Primeiro: criar uma conta</div>
+                        <div class="collapsible-body"><span>Clique neste link para criar a sua conta.</span></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">place</i>Segundo: obter o id receiver</div>
+                        <div class="collapsible-body"><span>Se já criou a sua conta, siga este <a href="">link para obter o id Receiver</a>. Copie o id.</span></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">whatshot</i>Terceiro: colar o</div>
+                        <div class="collapsible-body"><span>Cole o id receiver que copiou no passo anterior para a caixa de texto seguinte e clique em enviar.</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m8 push-m4">
+
+                <br/>
+            </div>
+
+            <div class="col s12 m4 z-depth-2 pull-m8">
+
+                    <nav>
+                        <div class="nav-wrapper orange darken-2">
+                              <div id="passos" class="col s12">
+                                <a  href="" class="breadcrumb">id receiver</a>
+                              </div>
+                        </div>
+                    </nav>
+
+
+                    <form name="formIdReceiver">
+                        <!--Passo 1 -->
+                        <div id="Passo1" >
+
+                            <div class="input-field col s12">
+                                <input name="idReceiver" id="idReceiver" type="text" class="validate">
+                                <label for="idReceiver" >Id receiver da sua conta do use kamba</label>
+                            </div>
+
+                            <div class="input-field right">
+                                <button  type="submit" id="btnEnviarIdReceiver"  class="btn waves-effect waves-dark orange" >Enviar</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</main>
+            
+<script>
+    $(document).ready(function(){
+        $('.collapsible').collapsible();
+    });
+</script>

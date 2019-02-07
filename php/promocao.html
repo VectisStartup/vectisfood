@@ -22,11 +22,12 @@
                     <div class="row">
                         <div class="col s1">
                             <ul id="nav-hamburger" class="left">
+                                <!--<li><i class="material-icons">menu</i></li>-->
                                 <li> <a href="#" data-target="slide-out" class="sidenav-trigger show-on-medium-and-up"><i class="material-icons black-text">menu</i></a></li>
                             </ul>
                         </div>
                         <div class="col s2 left">
-                            <a href="#" class="brand-logo black-text">Vectis Food</a>
+                            <a href="#" class="brand-logo black-text">Promoção</a>
                         </div>
                         <div class="col s3 offset-s8">
                             <ul id="nav-mobile" class="right">
@@ -63,7 +64,7 @@
             <li><a class="waves-effect" href="main.html"><i class="material-icons">cloud</i>Pagina Principal</a></li>
             <li><a class="waves-effect" href="pedidos.html"><i class="material-icons">person_pin</i>Pedidos</a></li>
             <li><a class="waves-effect" href="produto.html"><i class="material-icons">fastfood</i>Produtos</a></li>
-            <li><a class="waves-effect" href="#!"><i class="material-icons">flag</i>Promoção</a></li>
+            <li><a class="waves-effect" href="promocao.html"><i class="material-icons">flag</i>Promoção</a></li>
             <li><a class="waves-effect" href="#!"><i class="material-icons">trending_up</i>Estatisticas</a></li>
             <li><div class="divider"></div></li>
             <li><a class="subheader">Gerais</a></li>
@@ -73,41 +74,46 @@
         <!-- SideNav-->
     </header>
 
-<br>
+    <br>
 
 
 
     <main>
 
+
+
+
+
+
         <div class=" container" style=" width:90%;">
-            <div class="card-panel">
-                <div class="row">
-                    <div class="col s2">
-                        <img src="./../img/logo.jpg" width="100" height="100" class="circle responsive-img left">
+            <div class="row">
+
+                <div class="col s12 m12">
+                    <div class="col s12 m3">
+                        <div class="card sticky-action">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="./../img/img2.jpg">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4">Pizza de Queijo<i class="material-icons right">keyboard_arrow_up</i></span>
+                                <span class="red-text" style="text-decoration: line-through;">2.000 kz</span>
+                                <span>1.500 kz</span>
+                            </div>
+                            <div class="card-action">
+                                <a href="#">ELIMINAR</a>
+                                <a href="#">EDITAR</a>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Pizza de Queijo<i class="material-icons right">keyboard_arrow_down</i></span>
+                                <p>Uma deliciosa pizza com queio ralado em volta fatiado acompanhada com gasosa em lata</p>
+                                <p>02:00:00 de preparo</p>
+                                <p>2000 kz</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col s10">
-                            <b class="left-align">Pizaria Hudson</b>
-                        <div class="">Pizaria</div>
-                        <div class="blue-grey-text">pizariahudson@gmail.com</div>
-                    </div>
+
                 </div>
             </div>
-
-                <div class="row">
-
-                    <div class="col s12 m5">
-                        <div class="card-panel">
-                            <b class="">Missão</b>
-                            <p class="blue-grey-text">Lorem upum psu gdaum cmenmape nobgama fambs bregardaem </p>
-                        </div>
-                    </div>
-                    <div class="col s12 m5">
-                        <div class="card-panel">
-                            <b class="">Visão</b>
-                            <p class="blue-grey-text">Levar a melhor piza a todos as famílias. Lorem upum psu gdaum cmenmape nobgama fambs bregardaem</p>
-                        </div>
-                    </div>
-                </div>
         </div>
 
 
@@ -152,6 +158,10 @@
 <script>
     $(document).ready(function(){
         $('.sidenav').sidenav();
+
+        $('.modal').modal();
+
+        $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false});
     });
 </script>
 
