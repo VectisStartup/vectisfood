@@ -8,17 +8,27 @@ import {Servidor} from "./../Model/entidades/Servidor.js";
         this.servidor = new Servidor();
     }
     //email e senha
-    login(formulario){
-        var response = this.servidor.requisitar('GET','/lojas',formulario);
+    login(formulario, loading, loaded, failure){
+        var param = '?email='+formulario['email'].value+'&senha='+formulario['senha'].value;
+        var response = this.servidor.requisitarGETwithParameters('GET','/lojas',param);
         //Adicionar os eventos
         response.onreadystatechange=function(){
             if(response.readyState<4){
-                console.log("Aguarde..");
+                loading();
             }
             if(response.readyState==4){
-                console.log('login: ', response.responseText);
+
+                if(response.status == 200){
+
+                    loaded(response.status, response.responseText);
+                }else{
+                    failure(response.status, response.responseText);
+                }
             }
-        };
+        }
+        response.onerror=function(){
+            failure(response.status, response.responseText);
+        }
     }
     obterTodasAsLojas(){
         var response = this.servidor.requisitar('GET','/lojas',null);
@@ -49,10 +59,10 @@ import {Servidor} from "./../Model/entidades/Servidor.js";
         //Adicionar os eventos
         response.onreadystatechange=function(){
             if(response.readyState<4){
-                console.log("Aguarde..");
+                //console.log("Aguarde..");
             }
             if(response.readyState==4){
-                console.log('Resposta: ', response.responseText);
+                //console.log('Resposta: ', response.responseText);
             }
         };
     }
