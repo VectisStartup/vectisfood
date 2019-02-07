@@ -5,7 +5,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="./../css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -40,7 +40,7 @@
                             <div class="slider">
                                     <ul class="slides">
                                         <li>
-                                        <img src="./../img/img.jpg"> <!-- random image -->
+                                        <img src="img/img.jpg"> <!-- random image -->
                                         <div class="caption center-align">
                                             <h3>Vectis Fast Food Loja</h3>
                                             <h5 class="light grey-text text-lighten-3">Venda e leve os seus produtos até aos seus clientes a custo zero.</h5>
@@ -48,7 +48,7 @@
                                         </div>
                                         </li>
                                         <li>
-                                        <img src="./../img/img2.jpg"> <!-- random image -->
+                                        <img src="img/img2.jpg"> <!-- random image -->
                                         <div class="caption left-align">
                                             <h3>Vectis Fast Food Cliente</h3>
                                             <h5 class="light grey-text text-lighten-3">Compre e receba os seus produtos onde você quiser.</h5>
@@ -56,7 +56,7 @@
                                         </div>
                                         </li>
                                         <li>
-                                        <img src="./../img/img3.jpg"> <!-- random image -->
+                                        <img src="img/img3.jpg"> <!-- random image -->
                                         <div class="caption right-align">
                                             <h3>Vectis Fast Food Delivery</h3>
                                             <h5 class="light grey-text text-lighten-3">Receba pagamentos pela entrega de produtos a clientes.</h5>
@@ -64,7 +64,7 @@
                                         </div>
                                         </li>
                                         <li>
-                                        <img src="./../img/img4.jpg"> <!-- random image -->
+                                        <img src="img/img4.jpg"> <!-- random image -->
                                         <div class="caption center-align">
                                             <h3>Vectis Fast Food</h3>
                                             <h5 class="light grey-text text-lighten-3">A sua vida mais simples.</h5>
@@ -254,8 +254,8 @@
      
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-    <script src="./../js/Libs/js/jquery-3.3.1.min.js"></script>
-    <script src="./../js/Libs/js/materialize.min.js"></script>
+    <script src="js/Libs/js/jquery-3.3.1.min.js"></script>
+    <script src="js/Libs/js/materialize.min.js"></script>
     <script>
 
         $(document).ready(function(){
@@ -266,7 +266,7 @@
             $('select').formSelect();
         });
     </script>
-    <script type="module" src="./../js/index.js"></script>
+    <script type="module" src="js/index.js"></script>
     <!------------------- Firebase App is always required and must be first ---------------------->
 
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
