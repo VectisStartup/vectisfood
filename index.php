@@ -303,6 +303,15 @@
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
     <script>
+        $('.modal').modal();
+
+        $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false});
+
+
+
+
+
+
         // Initialize Firebase
         var config = {
             apiKey: "AIzaSyDItHexxmG-1NjPPq_v8eWqK-i8bZWZybI",
