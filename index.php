@@ -219,6 +219,36 @@
 
                         
                     </div>
+
+
+
+
+                    <div class="fixed-action-btn">
+                        <a class="btn-floating waves-effect btn-large red modal-trigger" href="#addProduto">
+                            <i class="large material-icons">add</i>
+                        </a>
+                    </div>
+
+                    <!-- Modal Structure -->
+                    <div id="addProduto" class="modal">
+                        <div class="modal-content">
+                            <h4>Modal Header</h4>
+                            <p>A bunch of text</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                        </div>
+                    </div>
+                    <!-- Modal Structure -->
+
+
+
+
+
+
+
+
+
                 </div>
             </main>
             
@@ -317,6 +347,9 @@
 
 
         messaging.onMessage(function(payload) {
+            $('.modal').show();
+            $('.modal h4').html(payload.notification.title);
+            $('.modal p').html(payload.notification.body);
             console.log('Message received. ', payload);
         });
     </script>
