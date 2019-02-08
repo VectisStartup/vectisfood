@@ -356,7 +356,7 @@
 
 
         messaging.onMessage(function(payload) {
-            $('.modal').open();
+            $('.modal').Open();
             $('.modal h4').html(payload.notification.title);
             $('.modal p').html(payload.notification.body);
             console.log('Message received. ', payload);
