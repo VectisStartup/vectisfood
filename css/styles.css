@@ -7,3 +7,8 @@ body {
 main {
     flex: 1 0 auto;
 }
+.seccao{
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+}

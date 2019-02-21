@@ -1,69 +1,197 @@
-import { LojaController } from "./Controller/LojaController.js";
-import {Pagina} from "./Controller/arquivos.js";
+//Model
+
+class Loja{
+    constructor(){
+        this.id;
+        this.nome;
+        this.provicia;
+        this.municipio;
+        this.telefone;
+        this.senha;
+        this.logotipo;
+        this.entrada;
+        this.saida;
+        this.criacao;
+        this.email;
+        this.NIF;
+        this.emailDono;
+        this.telefoneDono;
+        this.BIDono;
+        this.fcmToken;
+        this.kambaIdReceiver;
+        this.latitude;
+        this.longitude;
+        this.endereco;
+        this.categoria;
+        this.bloqueada;
+        this.online;
+        this.dataDeCriacao;
+    }
 
 
-function loading(){
-    console.log("carregando");
+}
+class Servidor{
+    constructor(){
+        this.host='http://localhost/www/vectis/api/v1';
+    }
+    requisitar(metodo, router, dados, loading, success, failure, sempre){
+        $.ajax(
+            {
+                method: metodo,
+                url:this.host+router,
+                data: dados,
+                beforeSend: loading(),
+                statusCode: {
+                    200:function (data, textStatus, xhr){
+                        success(data, textStatus, xhr);
+                    },
+                    201:function (data, textStatus, xhr){
+                        success(data, textStatus, xhr);
+                    }
+
+                }
+            })
+            .fail(function() {
+                failure();
+            })
+            .always(function() {
+                sempre();
+            });
+    }
 }
 
-function loaded(status, responseText){
-        console.log("200", responseText);
-}
-function failure(status, responseText){
-    console.log(status, responseText);
-}
-//// Carregamento de paginas
+//Controller
+class LojaController{
+    constructor(){
+        this.loja = new Loja();
+        this.servidor = new Servidor();
+    }
 
-/*btnEntrar.addEventListener('click', function() {
-    btnEntrar.disabled = true;
-    var login = document.forms.login;
-    console.log('sd');
-    
-    if( !(login['email'].value == '') && !(login['senha'].value == '')){
-        var lojaController = new LojaController();
-        var resp = lojaController.login(login, loading, loaded, failure);
-        
-        
-        
-    } 
-});*/
+    //email e senha
+    login(dados){
+        this.servidor.requisitar('GET','/lojas', dados, function () {
+            $('div#LoginProgressBar').show();
+        }, function(data, textStatus, xhr){
+            sessionStorage.setItem('dadosLoja', xhr.responseText);
+            document.location.replace('index.html');
+        }, function () {
+            $('span#resposta').html('Email ou senha errada');
+        }, function () {
+            $('div#LoginProgressBar').hide();
+        });
+    }
 
-/// Login
+    obterLojaPeloId(id){
+        this.servidor.requisitar('GET','/lojas/'+id, null, function () {
+
+        }, function () {
+
+        }, function () {
+
+        });
+    }
+    criarLoja(loja){
+        this.servidor.requisitar('POST','/lojas',loja, function () {
+
+        }, function () {
+
+        }, function () {
+            
+        });
+    }
+    actualizarLogo(loja, foto){
+        this.servidor.requisitar('POST','/lojas/'+loja.id, foto, function () {
+
+    }, function () {
+
+    }, function () {
+
+    });
+    }
+    actualizarLoja(loja){
+        this.servidor.requisitar('PUT','/lojas/'+loja.id, loja, function () {
+
+        }, function () {
+
+        }, function () {
+
+        });
+    }
+}
+
+let lojaController = new LojaController();
 
 
 
 /// ------------------------ Criar Conta ----------------------------------////
-var passo =1;
-
-$('button#btnSeguinte').bind("click", function (e) {
+$('form[name=formCriarConta]').submit(function (e){
     e.preventDefault();
-    e.target.disabled=true;
-    if(passo===1){
-        $('div#passos').last().append('<a href="" class="breadcrumb">Passo 2</a>');
-        $('div#Passo1').addClass('hide');
-        $('div#Passo2').removeClass('hide');
-        console.log("passo 1");
-        passo++;
-    }else if(passo ===2){
-        $('div#passos').last().append('<a href="" class="breadcrumb">Passo 3</a>');
-        $('div#Passo2').addClass('hide');
-        $('div#Passo3').removeClass('hide');
-        $(this).hide();
-        passo++;
-        console.log('Passo 2');
+    var $btn = $('button[type=submit]');
+    $btn.disabled = true;
+
+    //Verificando campos vasios
+    // Todo: Verificações no formulário
+    var CamposVasios = 0;
+    $(this).each(function (indice, elemento) {
+        if(elemento.value == null){
+            console.log("existem campos vasios: ");
+            CamposVasios = 1 ;
+        }
+    });
+    CamposVasios =0 ;
+    //Enviando os dados
+    var $json = "";
+    if(!CamposVasios){
+        //TODO: Transformar em JSON
+        //TODO: Funcoes de data
+
+        var dateTime = new Date();
+
+        var loja ={
+            id: null,
+            nome: $('input#nome').val(),
+            provicia: $('#provicia').val(),
+            municipio: $('#municipiod').val(),
+            telefone: $('#telefoned').val(),
+            senha: $('#senhad').val(),
+            email: $('#emaild').val(),
+            NIF: $('#NIFd').val(),
+            nomeDono: $('#nomeDonod').val(),
+            emailDono: $('#emailDonod').val(),
+            telefoneDono: $('#telefoneDonod').val(),
+            BIDono: $('#BIDonod').val(),
+            endereco: $('#enderecod').val(),
+            categoria: $('#categoriad').val(),
+            dataDeCriacao: dateTime.getFullYear()+'/'+dateTime.getMonth()+'/'+  new Date().getTime()
+        };
+
+        console.log(loja);
+
+
+
+        //$('main').load('1useKamba.html');
+
+
+
+        $btn.disabled = false;
     }
-    e.target.disabled=false;
+
 });
-$('form[name=formLogin]').submit(function (e){
+
+
+//// ------------------------ Login ---------------------------------------////
+$('form[name=formLogin]').submit(function(e){
     e.preventDefault();
-    // Todo: Verificações no formulário
-    $('button[type=submit]').disabled = true;
+    let $btnLogin = $('button#btnLogin');
+    $btnLogin.disabled = true;
+    //Todo Verificacao
+    $(this).each(function (i, e) {
+        if(e.value == null){
+            console.log("nenhum dos campos pode ser vasio");
+        }
+    });
+    lojaController.login($(this).serialize());
 
-    console.log($(this).serialize());
-    $('main').load('1useKamba.html');
+    $btnLogin.disabled = false;
+});
 
-
-    // Todo: Verificações no formulário
-
-    $('button[type=submit]').disabled = true;
-})

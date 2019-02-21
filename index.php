@@ -20,66 +20,28 @@
             <header>
                 <nav>
                     <div class="nav-wrapper white">
-                      <a href="#" class="brand-logo black-text">Fast Food Loja</a>
+                        <div class="row">
+                            <div class="col s12">
+                                <a href="#" class="brand-logo black-text">Vectis Food Loja</a>
+
+                            </div>
+                        </div>
                     </div>
                   </nav>
             </header>
 
 
             <main>
-                <div class=" container" style=" width:90%;">
+                <div class=" container" style="width:90%;">
                     <div class="row">
                         <div class="col s12">
-                            <h6>CRIAR UMA CONTA</h6>
-                            <p>Crie uma conta com apenas <b>3 passos</b>. As informações são seguid.
-                            aklsdjlkajsdklja klajklsdjkl aksjdkla jkashdkjha hwqghw ejhas dka KS kajskAJ  DKJASHDJKA DKA KD JAKJSDKAJSHADHUI Q  UIiidjhask skjdfhs dfjkuwieysdhfk389uirh3fsjfh239hfs   skdjfhuifsjkhfsdu. klJKLjakljd klasjdl io as dia skld lk dlkasdjiw laskdjklqw da kljwdklas dqwld apo'0kl siod0qw dal</p>
+                            <h5>CRIAR UMA CONTA</h5>
+                            <p>Crie uma conta com apenas <b>3 passos</b>.</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s12 m8 push-m4">
-                            <div class="slider">
-                                    <ul class="slides">
-                                        <li>
-                                        <img src="img/img.jpg"> <!-- random image -->
-                                        <div class="caption center-align">
-                                            <h3>Vectis Fast Food Loja</h3>
-                                            <h5 class="light grey-text text-lighten-3">Venda e leve os seus produtos até aos seus clientes a custo zero.</h5>
-                                            <a class="btn waves-effect white black-text grey-text">SABER MAIS</a>
-                                        </div>
-                                        </li>
-                                        <li>
-                                        <img src="img/img2.jpg"> <!-- random image -->
-                                        <div class="caption left-align">
-                                            <h3>Vectis Fast Food Cliente</h3>
-                                            <h5 class="light grey-text text-lighten-3">Compre e receba os seus produtos onde você quiser.</h5>
-                                            <a class="btn waves-effect white black-text grey-text">SABER MAIS</a>
-                                        </div>
-                                        </li>
-                                        <li>
-                                        <img src="img/img3.jpg"> <!-- random image -->
-                                        <div class="caption right-align">
-                                            <h3>Vectis Fast Food Delivery</h3>
-                                            <h5 class="light grey-text text-lighten-3">Receba pagamentos pela entrega de produtos a clientes.</h5>
-                                            <a class="btn waves-effect white black-text grey-text">SABER MAIS</a>
-                                        </div>
-                                        </li>
-                                        <li>
-                                        <img src="img/img4.jpg"> <!-- random image -->
-                                        <div class="caption center-align">
-                                            <h3>Vectis Fast Food</h3>
-                                            <h5 class="light grey-text text-lighten-3">A sua vida mais simples.</h5>
-                                            <a class="btn waves-effect white black-text grey-text">SABER MAIS</a>
-                                        </div>
-                                        </li>
-                                    </ul>
-                            </div>
-                            <br/>
-                            <p class=" flow-text">Uma falha comum que vimos em muitos frameworks é a falta de suporte para textos realmente responsivos. Enquanto os elementos na página são redimensionados com fluidez, o texto ainda é redimensionado em uma base fixa. Para amenizar esse problema, para páginas com texto pesado, criamos uma classe que dimensiona o tamanho do texto e a altura da linha para otimizar a legibilidade para o usuário. O comprimento da linha fica entre 45 e 80 caracteres e as escalas de altura da linha são maiores em telas menores.
-
-                                Para ver o Fluxo de Texto em ação, redimensione lentamente seu navegador e veja o tamanho dessa alteração no corpo do texto. Use o botão acima para ativar / desativar o texto de fluxo para ver a diferença!</p>
-                        </div>
                                 
-                        <div class="col s12 m4 z-depth-2 pull-m8">
+                        <div class="col s12 m8 offset-m2 l6 offset-l3">
 
                                 <nav>
                                     <div class="nav-wrapper orange darken-2">
@@ -221,55 +183,53 @@
                     </div>
                 </div>
             </main>
-            
-            
-            <footer class="page-footer">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col l6 s12">
-                          <h5 class="white-text">Outros Servicos</h5>
-                          <p class="grey-text text-lighten-4">Os nossos serviços ajudam a tornar a sua vida mais fácil.
-                              Receba pagamentos por encomendas feitas por si, venda os seus produtosa ao maior número de pessoas possível e compre os produtos no melhor preço.
-                          </p>
-                        </div>
-                        <div class="col l4 offset-l2 s12">
-                          <h5 class="white-text">Serciços Vectis Fast Food:</h5>
-                          <ul>
+
+
+        <footer class="page-footer orange lighten-1" style="margin: 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Outros Servicos</h5>
+                        <p class="grey-text text-lighten-4">Os nossos serviços ajudam a tornar a sua vida mais fácil.
+                            Receba pagamentos por encomendas feitas por si, venda os seus produtosa ao maior número de pessoas possível e compre os produtos no melhor preço.
+                        </p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Serviços Vectis Fast Food:</h5>
+                        <ul>
                             <li><a class="grey-text text-lighten-3" href="#">Loja</a></li>
                             <li><a class="grey-text text-lighten-3" href="#">Cliente</a></li>
                             <li><a class="grey-text text-lighten-3" href="#">Delivery</a></li>
-                          </ul>
-                        </div>
-                      </div>
+                        </ul>
                     </div>
-                    <div class="footer-copyright">
-                      <div class="container">
-                      © 2019 Vectis Fast Food Loja todos os direitos reservados
-                      <a class="grey-text text-lighten-4 right" href="#">Ir para o centro de ajuda</a>
-                      </div>
-                    </div>
-            </footer>
+                </div>
+            </div>
+            <div class="footer-copyright orange darken-1">
+                <div class="container">
+                    © 2019 Vectis Fast Food Loja todos os direitos reservados
+                    <a class="grey-text text-lighten-4 right" href="#">Ir para o centro de ajuda</a>
+                </div>
+            </div>
+        </footer>
         </div>
 
      
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <!-- jQuery first -->
     <script src="js/Libs/js/jquery-3.3.1.min.js"></script>
     <script src="js/Libs/js/materialize.min.js"></script>
     <script>
 
         $(document).ready(function(){
-            $('.slider').slider();
-            });
-
-        $(document).ready(function(){
             $('select').formSelect();
         });
     </script>
-    <!--<script type="module" src="js/index.js"></script>-->
+    <script type="module" src="js/index.js"></script>
+    
+    
+    
+    
     <!------------------- Firebase App is always required and must be first ---------------------->
-
-    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
     <script>
@@ -319,7 +279,7 @@
         messaging.onMessage(function(payload) {
             console.log('Message received. ', payload);
         });
-    </script>
+    </script>-->
   </body>
 </html>   
     

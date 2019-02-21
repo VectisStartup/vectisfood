@@ -2,106 +2,61 @@ import { Loja } from "./../Model/entidades/Loja.js";
 import {Servidor} from "./../Model/entidades/Servidor.js";
 
 
- class LojaController{
+class LojaController{
     constructor(){
         this.loja = new Loja();
         this.servidor = new Servidor();
     }
+
     //email e senha
-    login(formulario, loading, loaded, failure){
-        var param = '?email='+formulario['email'].value+'&senha='+formulario['senha'].value;
-        var response = this.servidor.requisitarGETwithParameters('GET','/lojas',param);
-        //Adicionar os eventos
-        response.onreadystatechange=function(){
-            if(response.readyState<4){
-                loading();
-            }
-            if(response.readyState==4){
-
-                if(response.status == 200){
-
-                    loaded(response.status, response.responseText);
-                }else{
-                    failure(response.status, response.responseText);
-                }
-            }
-        }
-        response.onerror=function(){
-            failure(response.status, response.responseText);
-        }
+    login(dados){
+        this.servidor.requisitar('GET','/lojas', dados, function () {
+            $('div#LoginProgressBar').show();
+        }, function(data, textStatus, xhr){
+            localStorage.setItem('dadosLoja', xhr.responseText);
+            document.location.replace('main.html');
+        }, function () {
+            $('span#resposta').html('Email ou senha errada');
+        }, function () {
+            $('div#LoginProgressBar').hide();
+        });
     }
-    obterTodasAsLojas(){
-        var response = this.servidor.requisitar('GET','/lojas',null);
-        //Adicionar os eventos
-        response.onreadystatechange=function(){
-            if(response.readyState<4){
-                console.log("Aguarde..");
-            }
-            if(response.readyState==4){
-                console.log('Resposta: ', response.responseText);
-            }
-        };
-    }
+
     obterLojaPeloId(id){
-        var response = this.servidor.requisitar('GET','/lojas/'+id, null);
-        //Adicionar os eventos
-        response.onreadystatechange=function(){
-            if(response.readyState<4){
-                console.log("Aguarde..");
-            }
-            if(response.readyState==4){
-                console.log('Resposta: ', response.responseText);
-            }
-        };
-    }
-    obterLojasPelaCategoria(categoria){
-        var response = this.servidor.requisitar('GET','/lojas/'+categoria, null);
-        //Adicionar os eventos
-        response.onreadystatechange=function(){
-            if(response.readyState<4){
-                //console.log("Aguarde..");
-            }
-            if(response.readyState==4){
-                //console.log('Resposta: ', response.responseText);
-            }
-        };
-    }
+        this.servidor.requisitar('GET','/lojas/'+id, null, function () {
 
-    criarLoja(loja){
-        var response = this.servidor.requisitar('POST','/lojas',loja);
-        //Adicionar os eventos
-        response.onreadystatechange=function(){
-            if(response.readyState<4){
-                console.log("Aguarde..");
-            }
-            if(response.readyState==4){
-                console.log('Resposta: ', response.responseText);
-            }
-        };
+        }, function () {
+
+        }, function () {
+
+        });
     }
-    actualizarLogo(loja, dados){
-        var response = this.servidor.requisitar('POST','/lojas/'+loja.id+'/logos',dados);
-        //Adicionar os eventos
-        response.onreadystatechange=function(){
-            if(response.readyState<4){
-                console.log("Aguarde..");
-            }
-            if(response.readyState==4){
-                console.log('Resposta: ', response.responseText);
-            }
-        };
+    criarLoja(loja){
+        this.servidor.requisitar('POST','/lojas',loja, function () {
+
+        }, function () {
+
+        }, function () {
+
+        });
+    }
+    actualizarLogo(loja, foto){
+        this.servidor.requisitar('POST','/lojas/'+loja.id, foto, function () {
+
+        }, function () {
+
+        }, function () {
+
+        });
     }
     actualizarLoja(loja){
-        var response = this.servidor.requisitar('PUT','/lojas/'+loja.id,loja);
-        //Adicionar os eventos
-        response.onreadystatechange=function(){
-            if(response.readyState<4){
-                console.log("Aguarde..");
-            }
-            if(response.readyState==4){
-                console.log('Resposta: ', response.responseText);
-            }
-        };
+        this.servidor.requisitar('PUT','/lojas/'+loja.id, loja, function () {
+
+        }, function () {
+
+        }, function () {
+
+        });
     }
-}  
+}
 export {LojaController};
