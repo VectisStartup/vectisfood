@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="./../css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="./../css/styles.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body class="blue-grey lighten-5">
+
+<div id="tudo">
+    <header>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper white black-text z-depth-3">
+                    <div class="row">
+                        <div class="col s1">
+                            <ul id="nav-hamburger" class="left">
+                                <li> <a href="#" data-target="slide-out" class="sidenav-trigger show-on-medium-and-up"><i class="material-icons black-text">menu</i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col s2 left">
+                            <a href="#" class="brand-logo black-text">Wendy</a>
+                        </div>
+                        <div class="col s3 offset-s8">
+                            <ul id="nav-mobile" class="right">
+                                <li>
+                                    <div class="switch">
+                                        <span class="hide-on-small-and-down">
+                                            online
+                                        </span>
+                                        <label>
+                                            <input type="checkbox" name="ckbOnline">
+                                            <span class="lever"></span>
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+        <!-- SideNav -->
+        <ul id="slide-out" class="sidenav">
+            <li><div class="user-view">
+                <div class="background">
+                    <img src="./../img/img.jpg">
+                </div>
+
+                <a href=""><img src="" width="50" height="50" class="circle"></a>
+                <a href=""><span class="white-text name">Pizzaria Hudson</span></a>
+                <a href=""><span class="white-text email">pizariahudson@gmail.com</span></a>
+            </div></li>
+            <li><a class="waves-effect" href="#main"><i class="material-icons">cloud</i>Pagina Principal</a></li>
+            <li><a class="waves-effect" href="#pedidos"><i class="material-icons">person_pin</i>Pedidos</a></li>
+            <li><a class="waves-effect" href="#produto"><i class="material-icons">fastfood</i>Produtos</a></li>
+            <li><a class="waves-effect" href="#promocao"><i class="material-icons">flag</i>Promoção</a></li>
+            <li><a class="waves-effect" href="#!"><i class="material-icons">trending_up</i>Estatisticas</a></li>
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">Gerais</a></li>
+            <li><a class="waves-effect disabled" href="#!"><i class="material-icons">settings</i>Definições</a></li>
+            <li><a class="waves-effect modal-trigger" href="#modalSair"><i class="material-icons">clear</i>Sair</a></li>
+        </ul>
+        <!-- SideNav-->
+    </header>
+
+<br>
+
+
+    <main id="principal">
+
+    </main>
+    <div class="col s12 center">
+        <div id="IndexProgressBar" class="preloader-wrapper active small">
+            <div class="spinner-layer spinner-red-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modalSair" class="modal">
+        <div class="modal-content">
+            <h4>Solicitação para sair</h4>
+            <p>Tens a certeza que pretendes sair?</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-close waves-effect waves-green btn-flat">não</a>
+            <a href="#" class="modal-close waves-effect waves-green btn-flat">sim</a>
+        </div>
+    </div>
+    <!-- Modal Structure -->
+
+    <a class="waves-effect waves-light btn modal-trigger" href="#modalProdutos">Novo pedido</a>
+
+
+    <!-- Modal Structure -->
+    <div id="modalProdutos" class="modal">
+        <div class="modal-content">
+            <h4 align="center">NOVO PEDIDO</h4>
+
+
+            <div class="row">
+                <div class="col m4">
+                    <h6>CODIGO: 1230123</h6>
+                </div>
+                <div class="col m8">
+                    <h6 align="right">TEMPO DE PREPARO: 00:30:00 </h6><br>
+                </div>
+            </div>
+
+            <h6 align="center">LISTA DE PRODUTOS</h6><br>
+
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>Piza de Queijo jhasdjhj  sakd kasd</td>
+                    <td>5</td>
+                    <td>500 Kz</td>
+                </tr>
+                <tr>
+                    <td>Gasosa</td>
+                    <td>4</td>
+                    <td>800 Kz</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <h6>TOTAL: 1,300 kz </h6>
+
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Negar</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Aceitar</a>
+        </div>
+    </div>
+    <!-- Modal Structure -->
+
+
+    <footer class="page-footer orange lighten-1">
+        <div class="container" style="width: 90%;">
+            <div class="row">
+                <div class="col l4 s12">
+                    <h5 class="white-text">Outros Servicos</h5>
+                    <p class="grey-text text-lighten-4">Os nossos serviços ajudam a tornar a sua vida mais fácil.
+                        Receba pagamentos por encomendas feitas por si, venda os seus produtosa ao maior número de pessoas possível e compre os produtos no melhor preço.
+                    </p>
+                </div>
+                <div class="col l4 s12">
+                    <h5 class="white-text">Serviços Vectis Fast Food:</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#">Loja</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">Cliente</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">Delivery</a></li>
+                    </ul>
+                </div>
+                <div class="col l4 s12">
+                    <h5 class="white-text"></h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#">FAQs</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">Ajuda</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#">Mensagem</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright orange darken-1">
+            <div class="container">
+                © 2019 Vectis Fast Food Loja todos os direitos reservados
+                <a class="grey-text text-lighten-4 right" href="#">Ir para o centro de ajuda</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script src="./../js/Libs/js/jquery-3.3.1.min.js"></script>
+<script src="./../js/Libs/js/materialize.min.js"></script>
+
+
+<!--<script type="module" src="js/index.js"></script>-->
+<!------------------- Firebase App is always required and must be first ---------------------->
+
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+
+
+
+<script type="module" src="./../js/lojaExec.js"></script>
+
+
+<script>
+
+</script>
+
+</body>
+</html>
