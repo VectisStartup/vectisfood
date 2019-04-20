@@ -1,34 +1,101 @@
 
     <div id="mainPag">
         <div class=" container" style=" width:90%;">
-            <div class="card-panel"">
+            <div class="card-panel">
                 <div class="row">
                     <div class="col s2">
                         <img id="logotipo" src="./../img/logo.jpg" width="100" height="100" class="circle responsive-img left">
                     </div>
-                    <div class="col s10">
-                        <b id="txtNomeLoja" class="left-align">Pizaria Hudson</b>
+                    <div class="col s7">
+                        <b id="txtNomeLoja" class="left-align">xxxx</b>
                         <div id="txtCategoriaLoja" ></div>
-                        <div id="txtEmailLoja" class="blue-grey-text">pizariahudson@gmail.com</div>
+                        <div id="txtEmailLoja" class="blue-grey-text">xxx</div>
+                        <b id="txtLocalDeReferencia" class="black-text medium">xxx</b>
+                    </div>
+                    <div class="col s3">
+                        <i class="material-icons small yellow-text">grade <span>4,5</span></i>
+
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col s10 offset-s2">
+                        <b>Objectivo</b>
+                        <p id="txtObjectivo" class="blue-grey-text"></p>
+
                     </div>
                 </div>
             </div>
-
+            <div class="card-panel">
             <div class="row">
 
-                <div class="col s12 m6">
-                    <div class="card-panel">
-                        <b class="">Missão</b>
-                        <p id="txtMissao" class="blue-grey-text"></p>
+                    <div class="col s6">
+                        <b>Horário</b>
+                        <p id="txtHorario" class="blue-grey-text medium"></p>
+                        <label>
+                            <input id="txtTypeService" type="checkbox" disabled="disabled">
+                            <span><b>Serviço de Entrega</b></span>
+                        </label>
                     </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="card-panel">
-                        <b class="">Visão</b>
-                        <p id="txtVisao" class="blue-grey-text"></p>
+                    <div class="col s6">
+                        <b>Taxa de Entrega</b>
+                        <p id="txtTaxaDeEntrega" class="blue-grey-text medium"></p>
+                        <b>Pagamentos</b><br>
+                        <label>
+                            <input id="txtPayOnline" type="checkbox" disabled="disabled">
+                            <span>online</span>
+                        </label>
+                        <br>
+                        <label>
+                            <input type="checkbox" id="txtPayMoney" disabled="disabled">
+                            <span>à dinheiro</span>
+                        </label>
+                        <br>
+                        <label>
+                            <input id="txtPayTPA" type="checkbox" disabled="disabled">
+                            <span>à máquina</span>
+                        </label>
                     </div>
+
                 </div>
             </div>
-        </div>
 
+
+                <div class="row">
+                    <div class=" col s12 m5 card-panel">
+                        <h5>Comentários</h5>
+                        <div>
+                            <div class="col s8">
+                                <span class="">Jackson James</span>
+                            </div>
+                            <div class="col s4">
+                                <i class="material-icons yellow-text darken-4">x x x x</i><!--grade grade grade grade grade</i>-->
+                            </div>
+                            <p class="blue-grey-text">Rápida nas entregas e qualidade nos produtos</p>
+                            <div class="divider"></div>
+                        </div>
+                        <div>
+                            <div class="col s8">
+                                <span class="">Henry Ford</span>
+                            </div>
+                            <div class="col s4">
+                                <i class="material-icons yellow-text darken-4">x x x x</i><!--grade grade grade grade grade</i>-->
+                            </div>
+                            <p class="blue-grey-text">Inovadora! Até parece o meu motor à combustão. Serviços rápidos e excelentes</p>
+                            <div class="divider"></div>
+                        </div>
+                            <a class="btn btn-flat orange-text center" href="#!">ver mais</a>
+
+                    </div>
+
+                    <div class="col s12 offset-m1 m6 card-panel">
+                        <h5>Evolução das vendas</h5>
+                        <br>
+                        <div class="col s12">
+                            <canvas id="graphEstatisticas"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
     </div>

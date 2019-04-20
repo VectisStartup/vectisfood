@@ -1,0 +1,218 @@
+<div id="definicoesPag">
+    <div class="container" style="width:90%;">
+        <form name="formEditarLoja">
+            <div class="card-panel">
+
+                    <div class="row">
+                        <h5>Loja</h5>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <input name="nome" id="nome" type="text" class="validate">
+                                <label for="nome" class="active">Nome do Estabelecimento</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input id="localDeReferencia" name="localDeReferencia" type="text" class="validate">
+                                <label for="localDeReferencia" class="active">Endereco físico (bairro-localDeReferencia)</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <input id="horario" name="horario" type="text" class="validate">
+                                <label for="horario" class="active">Horário</label>
+                            </div>
+
+                            <div class="input-field col s12 m6">
+                                <input id="telefone" name="telefone" type="number" class="validate">
+                                <label for="telefone" class="active">Telefone</label>
+                            </div>
+                        </div>
+
+                        <div class="input-field col s12 m8 offset-m2">
+                            <input id="objectivo" name="objectivo" type="text" class="validate">
+                            <label for="objectivo" class="active">Objectivo</label>
+                        </div>
+
+                        <br>
+
+
+                        <div class="row">
+                            <!--<div class="input-field col s12 m4">
+                                <input list="listCategorias" id="categoria" name="categoria" autocomplete="" class="validate" type="search">
+                                <label for="categoria" class="active">Categoria</label>
+                                <datalist id="listCategorias">
+                                    <option value="CATEGORIA" disabled selected>
+                                    <option value="Restaurante">
+                                    <option value="Pizaria">
+                                    <option value="Hamburgaria">
+                                    <option value="Churrascaria">
+                                </datalist>
+                            </div>-->
+                            <div class="input-field col s12 m4">
+                                <select id="categoria" name="categoria" class="col s12">
+                                    <option value="" disabled>CATEGORIA</option>
+                                    <option value="Restaurante">Restaurante</option>
+                                    <option value="Pizaria">Pizaria</option>
+                                    <option value="Hamburgaria">Hamburgaria</option>
+                                    <option value="Churrascaria">Churrascaria</option>
+                                    <option value="Pastelaria">Pastelaria</option>
+                                    <option value="Padaria">Padaria</option>
+
+                                </select>
+                                <label for="categoria">Categoria</label>
+                            </div>
+
+                            <div class="input-field col s12 m4">
+                                <select id="provincia" name="provincia">
+                                    <option value="Huila" >Huila</option>
+                                </select>
+                                <label for="provincia">Provincia</label>
+                            </div>
+
+                            <div class="input-field col s12 m4">
+                                <select id="municipio" name="municipio">
+                                    <option value="Caconda">Caconda</option>
+                                    <option value="Cacula">Cacula</option>
+                                    <option value="Caluquembe">Caluquembe</option>
+                                    <option value="Chiage">Chiage</option>
+                                    <option value="Chibia">Chibia</option>
+                                    <option value="Chicomba">Chicomba</option>
+                                    <option value="Chipindo">Chipindo</option>
+                                    <option value="Humpata">Humpata</option>
+                                    <option value="Jamba">Jamba</option>
+                                    <option value="Kuvango">Kuvango</option>
+                                    <option value="Lubango">Lubango</option>
+                                    <option value="Matala">Matala</option>
+                                    <option value="Quilengues">Quilengues</option>
+                                    <option value="Quipungo">Quipungo</option>
+                                </select>
+                                <label for="municipio">Municipio</label>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <h5>Pagamentos</h5>
+                            <div class="col s12 m4">
+                                <label class="modal-trigger" data-target="modalKambaIdReceiver">
+                                    <input name="payOnline" type="checkbox"/>
+                                    <span>online (kamba - carteira virtual)</span>
+                                </label>
+                            </div>
+                            <div class="col s12 m4">
+                                <label for="payMoney">
+                                     <input id="payMoney" type="checkbox" name="payMoney">
+                                    <span>à dinheiro</span>
+                                </label>
+                            </div>
+                            <div class="col s12 m4">
+                                <label for="payTPA">
+                                    <input id="payTPA" type="checkbox" name="payTPA">
+                                    <span>TPA (máquina)</span>
+                                </label>
+                            </div>
+                            <div class="col s12 m6">
+                                <br>
+                                <label for="taxaDeEntrega" class="active">Taxa de Entrega (kz)</label>
+                                <input id="taxaDeEntrega" name="taxaDeEntrega" type="number" step="0.01" class="validate">
+                            </div>
+                            <div class="col s12 m6">
+                                <br>
+                                <br>
+                                <div class="switch">
+                                    <span class="medium" style="font-size: medium;">Fazemos serviço de entrega</span>
+                                    <label>
+                                        <input type="checkbox" name="typeService">
+                                        <span class="lever"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button type="submit" class="btn waves-effect waves-dark btn-flat orange-text right modal-trigger" >Guardar</button>
+
+                    </div>
+            </div>
+        </form>
+        <div class="card-panel">
+                <div class="row">
+                    <div class="col s12">
+                        <h5>Logotipo</h5>
+                        <p>Altere o seu logotipo para expandir a sua marca e para que os seus clientes o reconheçam</p>
+                        <form name="formEditarLogotipoLoja">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>Imagem</span>
+                                    <input type="file" name="imagemLogotipoLoja" accept="image/*">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="(Opcional) Escolha a imagem do logotipo">
+                                </div>
+
+                                <button  type="submit"  class="waves-effect waves-dark btn-flat orange-text right disabled" >Guardar</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+
+        <div class="card-panel">
+            <div class="row">
+                <div class="col s12 m4">
+                    <h5>Senha</h5>
+                    <button id="btnAlterarSenha" class="btn waves-effect waves-dark btn-flat">Redefinir a senha</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal Structure -->
+        <div id="modalKambaIdReceiver" class="modal">
+            <form>
+                <div class="modal-content">
+                    <h4>Kamba id Receiver</h4>
+                    <p>Para que possas receber pagamentos online, precisas de ter uma conta comercial Kamba - Carteira virtual. Se já tiveres, Copia e cola aqui o seu <span class="blue-text">KambaUserId</span> </p>
+                    <div class="input-field col s12 m6">
+                        <input name="txtKambaUserId" placeholder="cole aqui" id="txtKambaUserId" type="text" class="validate">
+                        <label for="txtKambaUserId" class="active">Kamba Fcm id Receiver</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="modal-close waves-effect waves-green btn-flat">Guardar</button>
+                </div>
+            </form>
+        </div>
+        <!-- Modal Structure -->
+
+        <!-- Modal Structure -->
+        <div id="modalSenha" class="modal">
+            <form name="frmNovaSenha">
+                <div class="modal-content">
+                    <h4 align="center">Redefinir Senha</h4>
+                    <div id="redefinir" class="row">
+                        <div class="col s12">
+                            <div class="input-field col s12">
+                                <input  id="novaSenha" name="novaSenha" type="password" class="validate">
+                                <label for="novaSenha">Nova senha</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input  id="confirmarNovaSenha" name="confirmarNovaSenha" type="password" class="validate">
+                                <label for="confirmarNovaSenha">Confirmar Nova Senha</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-orange  btn-flat">Cancelar</a>
+                    <button type="submit" class="waves-effect waves-orange  btn-flat right">Enviar</button>
+                </div>
+            </form>
+        </div>
+        <!-- Modal Structure -->
+    </div>
+
+</div>

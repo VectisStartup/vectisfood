@@ -1,5 +1,6 @@
 import { Loja } from "./../Model/entidades/Loja.js";
 import {Servidor} from "./../Model/entidades/Servidor.js";
+import {validarTipoDeImagem, jsonReplacer} from "./GeralHelper.js";
 
 
 class LojaController{
@@ -13,7 +14,7 @@ class LojaController{
         this.servidor.requisitar('GET','/lojas', dados, function () {
             $('div#LoginProgressBar').show();
         }, function(data, textStatus, xhr){
-            localStorage.setItem('dadosLoja', xhr.responseText);
+            sessionStorage.setItem('dadosLoja', xhr.responseText);
             document.location.replace('main.html');
         }, function () {
             $('span#resposta').html('Email ou senha errada');
@@ -22,8 +23,10 @@ class LojaController{
         });
     }
 
-    obterLojaPeloId(id){
-        this.servidor.requisitar('GET','/lojas/'+id, null, function () {
+    obterLojaPeloId(loja){
+        return this.servidor.requisitar('GET','/lojas/'+loja.id, null, function () {
+
+        }, function () {
 
         }, function () {
 
@@ -32,7 +35,8 @@ class LojaController{
         });
     }
     criarLoja(loja){
-        this.servidor.requisitar('POST','/lojas',loja, function () {
+        let dados = JSON.stringify(loja, jsonReplacer);
+        this.servidor.requisitar('POST','/lojas', dados, function () {
 
         }, function () {
 
@@ -41,18 +45,28 @@ class LojaController{
         });
     }
     actualizarLogo(loja, foto){
-        this.servidor.requisitar('POST','/lojas/'+loja.id, foto, function () {
+        return this.servidor.requisitar('POST','/lojas/'+loja.id+'/logos', foto, function () {
 
         }, function () {
 
         }, function () {
 
-        });
+        }, function () {
+
+        }, true)
     }
     actualizarLoja(loja){
-        this.servidor.requisitar('PUT','/lojas/'+loja.id, loja, function () {
+        let dados = {};
+        dados = Object.assign(dados,loja);
+        dados.id = undefined;
+        return this.servidor.requisitar('PUT','/lojas/'+loja.id, JSON.stringify(dados, jsonReplacer), function () {
 
         }, function () {
+
+
+        }, function () {
+            M.toast({html: 'Erro. Por favor, tente mais tarde. ', classes: 'rounded'});
+
 
         }, function () {
 

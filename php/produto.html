@@ -13,7 +13,7 @@
     <!-- Floating Recources-->
     <!-- Floating accent button -->
     <div class="fixed-action-btn">
-        <a class="btn-floating waves-effect btn-large red modal-trigger" href="#addProduto">
+        <a class="btn-floating waves-effect btn-large red modal-trigger" href="#ModalAddProduto">
             <i class="large material-icons">add</i>
         </a>
     </div>
@@ -21,14 +21,196 @@
 
 
     <!-- Modal Structure -->
-    <div id="addProduto" class="modal">
-        <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-        </div>
+    <div id="ModalAddProduto" class="modal">
+        <form name="frmAdidionarProduto">
+            <div class="modal-content">
+                <h4>Adicionar um Produto</h4>
+
+                <div class="input-field col s12">
+                    <input id="nome" name="nome" type="text">
+                    <label for="nome">Nome</label>
+                </div>
+
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Imagem</span>
+                            <input type="file" name="imagem" accept="image/*">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="(Opcional) Escolha a imagem relativa ao produto">
+                        </div>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <select id="categoria" name="categoria">
+                            <option value="" disabled selected>Escolha uma categoria</option>
+                            <option value="0">Comida</option>
+                            <option value="1">Bebida</option>
+                        </select>
+                        <label for="categoria">Categoria</label>
+                    </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="tempo" name="tempoDePreparo" type="time" class="validate">
+                        <label for="tempo">Preparação (h:m)</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="number" name="preco" step="0.01" id="preco">
+                        <label for="preco">Preço (Kz)</label>
+                    </div>
+                </div>
+
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" name="descricao" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Descrição</label>
+                    </div>
+
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Sair</a>
+                <button type="submit" class="waves-effect waves-green btn-flat">Criar</button>
+            </div>
+        </form>
+    </div>
+    <!-- Modal Structure -->
+
+    <!-- Modal Structure -->
+    <div id="ModalDetalhesProduto" class="modal">
+        <form name="frmDetalhesProduto">
+            <div class="modal-content">
+                <h4>Detalhes de um Produto</h4>
+
+                <div class="row">
+                    <div class="col s12 m4">
+                        <img src="./../img/img2.jpg" id="imagemD" class="responsive-img">
+                    </div>
+                    <div class="col s12 offset-m4 m4 left-align">
+                        <h3>4,5</h3>
+                    </div>
+                </div>
+                <p><span id="nomeD">NOME</span> à <span id="precoD">PRECO</span>
+                    kwanzas que pode ser preparada em <span id="tempoDePreparoD">TEMPO</span>. Uma <span id="categoriaD">COMIDA</span> deliciosa!</p>
+                <p>Descricao</p>
+
+                <b>Comentários</b>
+                <div class="row">
+                    <div class="col s12">
+                        <div class="col s8">
+                            <span class="">Jackson James</span>
+                        </div>
+                        <div class="col s4">
+                            x  x  x  x  x
+                        </div>
+                        <p class="blue-grey-text">Uma delicia de produto!</p>
+                        <div class="divider"></div>
+                        <a class="btn btn-flat orange-text center" href="#!">ver mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Sair</a>
+                <button type="submit" class="waves-effect waves-green btn-flat">Editar</button>
+            </div>
+        </form>
+    </div>
+    <!-- Modal Structure -->
+
+    <!-- Modal Structure -->
+    <div id="modalEditarProduto" class="modal">
+        <form name="frmEditarProduto">
+            <div class="modal-content">
+                <h4>Editar um Produto</h4>
+                <div class="row">
+                    <div class="col s6">
+                        <img class="responsive-img" name="imagemP" src="http://localhost/www/vectis/api/v1/src/img/produto/img_000000-46-22_10-03-2019.jpg">
+                    </div>
+                    <div class="col s6">
+                        <a href="#modalEditarFotoProduto" class="btn btn-flat modal-trigger">Alterar</a>
+                    </div>
+
+                </div>
+                <div class="input-field col s12">
+                    <input id="nomeP" name="nomeP" type="text">
+                    <label for="nomeP" class="active">Nome</label>
+                </div>
+                    <input type="hidden" name="txtProdutoIdentifier">
+                    <div class="input-field col s12">
+                        <select id="categoriaP" name="categoriaP">
+                            <option value="0">Comida</option>
+                            <option value="1">Bebida</option>
+                        </select>
+                        <label for="categoriaP">Categoria</label>
+                    </div>
+                <div class="row">
+                    <div class="input-field col s5">
+                        <input id="tempoP" name="tempoDePreparoP" type="time" class="validate">
+                        <label for="tempoP" class="active">Preparação</label>
+                    </div>
+                    <div class="input-field col s7">
+                        <input type="number" step="0.01" name="precoP" id="precoP">
+                        <label for="precoP" class="active">Preço (Kz)</label>
+
+                    </div>
+                </div>
+                <div class="input-field col s12">
+                    <textarea id="textarea1P" name="descricaoP" class="materialize-textarea"></textarea>
+                    <label for="textarea1P" class="active">Descrição</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Sair</a>
+                <button type="submit" class="waves-effect waves-green btn-flat">Guardar</button>
+            </div>
+        </form>
+    </div>
+    <!-- Modal Structure -->
+
+    <!-- Modal Structure -->
+    <div id="modalEditarFotoProduto" class="modal">
+        <form name="frmEditarImagemProduto">
+            <div class="modal-content">
+                <h4>Editar um Produto</h4>
+                <div class="col s6">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Imagem</span>
+                            <input type="file" name="imagemNovaProduto" accept="image/*">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="(Opcional) Escolha a imagem relativa ao produto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Sair</a>
+                <button type="submit" class="waves-effect waves-green btn-flat">Guardar</button>
+            </div>
+        </form>
+    </div>
+    <!-- Modal Structure -->
+
+    <!-- Modal Structure -->
+    <div id="modalEliminarProduto" class="modal">
+        <form name="frmEliminar">
+            <div class="modal-content">
+                <h4>Retirar Produto da prateleira</h4>
+                <p>Você tem certeza que pretende retirar este produto?</p>
+                <p>Os clientes não vão poder mais comprar o/a "<span class="orange-text" id="txtEliminarProdutoNome"></span>". Esta operação é irreversível</p>
+                <label>
+                    <input type="hidden" class="hide" name="txtEliminarIdentifier">
+                </label>
+                <!--<p>Nome do produto: <span id="txtEliminarProdutoNome"></span></p>-->
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat orange-text">Sair</a>
+                <button type="submit" class="waves-effect waves-green btn-flat">Eliminar</button>
+            </div>
+        </form>
     </div>
     <!-- Modal Structure -->
 </div>

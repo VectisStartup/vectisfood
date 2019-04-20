@@ -33,7 +33,7 @@
 
 
             <main>
-                <div class=" container" style="width:90%;">
+                <div id="criarContaPag" class="container" style="width:90%;">
                     <div class="row">
                         <div class="col s12">
                             <h5>CRIAR UMA CONTA LOJA</h5>
@@ -44,13 +44,7 @@
                                 
                         <div class="col s12 m8 offset-m2 l6 offset-l3">
 
-                                <nav>
-                                    <div class="nav-wrapper orange darken-2">
-                                          <div id="passos" class="col s12">
-                                            <span class="">DADOS</span>
-                                          </div>
-                                    </div>
-                                </nav>
+                                <h5>Loja</h5>
 
 
                                 <form name="formCriarConta">
@@ -67,8 +61,8 @@
                                     </div>
                             
                                         <div class="input-field col s12">
-                                            <input id="endereco" name="endereco" type="text" class="validate"> <!--placeholder="Bairo-rua">-->
-                                            <label for="endereco" >Endereco</label>
+                                            <input id="endereco" name="endereco" placeholder="Bairo-rua" type="text" class="validate">
+                                            <label for="endereco" class="active">Endereco</label>
                             
                                         </div>
                             
@@ -85,37 +79,39 @@
 
                                         <div class="input-field col s12">
                                             <select id="provincia" name="provincia" class="col s12">
-                                                <option value="" disabled selected>PROVINCIA</option>
-                                                <option value="HUILA" >HUILA</option>
+                                                <option value="Huila" selected>Huila</option>
                                             </select>
                                             <label for="provincia">Provincia</label>
                                         </div>
 
                                         <div class="input-field col s12">
                                             <select id="municipio" name="municipio" class="col s12">
-                                                <option value="" disabled selected>MUNICIPO</option>
-                                                <option value="Caconda">CACONDA</option>
-                                                <option value="Cacula">CACULA</option>
-                                                <option value="Caluquembe">CALUQUEMBE</option>
-                                                <option value="Chiage">CHIANGE</option>
-                                                <option value="Chibia">CHIBIA</option>
-                                                <option value="Chicomba">CHICOMBA</option>
-                                                <option value="Chipindo">CHIPINDO</option>
-                                                <option value="Humpata">HUMPATA</option>
-                                                <option value="Jamba">JAMBA</option>
-                                                <option value="Kuvango">KUVANGO</option>
-                                                <option value="Lubango">LUBANGO</option>
-                                                <option value="Matala">MATALA</option>
-                                                <option value="Quilengues">QUILENGUES</option>
-                                                <option value="Quipungo">QUIPUNGO</option>
+                                                <option value="Caconda">Caconda</option>
+                                                <option value="Cacula">Cacula</option>
+                                                <option value="Caluquembe">Caluquembe</option>
+                                                <option value="Chiage">Chiage</option>
+                                                <option value="Chibia">Chibia</option>
+                                                <option value="Chicomba">Chicomba</option>
+                                                <option value="Chipindo">Chipindo</option>
+                                                <option value="Humpata">Humpata</option>
+                                                <option value="Jamba">Jamba</option>
+                                                <option value="Kuvango">Kuvango</option>
+                                                <option value="Lubango" selected>Lubango</option>
+                                                <option value="Matala">Matala</option>
+                                                <option value="Quilengues">Quilengues</option>
+                                                <option value="Quipungo">Quipungo</option>
                                             </select>
                                             <label for="municipio">Municipio</label>
                                         </div>
 
                                         <div class="input-field col s12">
                                             <select id="categoria" name="categoria" class="col s12">
-                                                <option value="" disabled selected>CATEGORIA</option>
-                                                <option value="Restaurante">RESTAURANTE</option>
+                                                <option value="Restaurante" selected>Restaurante</option>
+                                                <option value="Pizaria">Pizaria</option>
+                                                <option value="Hamburgaria">Hamburgaria</option>
+                                                <option value="Churrascaria">Churrascaria</option>
+                                                <option value="Pastelaria">Pastelaria</option>
+                                                <option value="Padaria">Padaria</option>
                                             </select>
                                             <label for="categoria">Categoria</label>
                                             <br>
@@ -162,12 +158,9 @@
                                             <input id="telefone" name="telefone" type="number" class="validate">
                                             <label for="telefone">Telefone da loja</label>
                                         </div>
-                                        <div class="input-field col s12">
-                                            <input id="conf" type="number" class="validate">
-                                            <label for="conf">Código de donfirmação</label>
-                                        </div>
+
                                         <div class="input-field right">
-                                            <button  type="submit" id="btnEnviar"  class="btn waves-effect waves-dark orange" >Enviar</button>
+                                            <button  type="submit"  class="btn waves-effect waves-dark orange" >Enviar</button>
                                         </div>
 
 
@@ -180,6 +173,22 @@
 
                         
                     </div>
+
+                    <!-- Codigo de Confirmacao-->
+<div id="modalCodioDeConfirmacao" class="modal">
+    <h5>Confirmação</h5>
+    <form>
+        <p>Enviamos um email para si. Visite a sua caixa de mensagens no seu email para ver o código que enviamos.</p>
+        <div class="input-field col s12">
+            <input id="conf" type="number" class="validate">
+            <label for="conf">Código de donfirmação</label>
+        </div>
+        <button  name="btnEnviarNovamente"  class="btn waves-effect waves-dark btn-flat orange" >Enviar novamente</button>
+        <button  type="submit"  class="btn waves-effect waves-dark btn-flat orange" >Enviar</button>
+
+    </form>
+
+</div>
 
 
 
@@ -231,6 +240,9 @@
             </main>
 
 
+
+
+
             <footer class="page-footer orange lighten-1" style="margin: 0;">
             <div class="container">
                 <div class="row">
@@ -271,7 +283,7 @@
             $('select').formSelect();
         });
     </script>
-    <script type="module" src="./../js/index.js"></script>
+    <script type="module" src="../js/login.js"></script>
     
     
     

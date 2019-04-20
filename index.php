@@ -253,7 +253,7 @@
             $('select').formSelect();
         });
     </script>
-    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/login.js"></script>
     
     
     

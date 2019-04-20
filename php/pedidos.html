@@ -1,46 +1,87 @@
+<style type="text/css" xmlns:19="http://www.w3.org/1999/xhtml" xmlns:19="http://www.w3.org/1999/xhtml">
+    main, footer{
+        padding-left: 300px;
+    }
+    main{
+        min-height: 500px;
+        background-color: white;
+        margin-top: -20px;
+    }
+
+    @media only screen and (max-width : 992px) {
+        header, main, footer {
+            padding-left: 0;
+        }
+    }
+</style>
 <div id="pedidosPag">
-    <div class=" container" style=" width:90%;">
-</div>
-        <br>
+
+    <div id="pedidoContainer" class="container" style=" width:100%; margin-top: -15px;">
+
         <div class="row">
-            <div class="col s12">
-                    <ul class="collection">
-                        <li class="collection-item avatar">
-                            <span class="title">Title</span>
-                            <p>First Line <br>
-                                Second Line
-                            </p>
-                            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle">folder</i>
-                            <span class="title">Title</span>
-                            <p>First Line <br>
-                                Second Line
-                            </p>
-                            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle green">insert_chart</i>
-                            <span class="title">Title</span>
-                            <p>First Line <br>
-                                Second Line
-                            </p>
-                            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="material-icons circle red">play_arrow</i>
-                            <span class="title">Title</span>
-                            <p>First Line <br>
-                                Second Line
-                            </p>
-                            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                        </li>
-                    </ul>
+                <div class="col s12">
+                    <a href="#!" data-target="slide-out" class="btn-openSidenav show-on-small hide-on-med-and-up"><i class="material-icons">arrow_back</i></a>
+                    <h5>Detalhes</h5>
+                </div>
+                <div id="decisaoNovoPedido" class="col s12 card-panel hide">
+                    <p>Aceitar pedido?</p>
+                    <div>
+
+                        <button id="btnAceitarPedido" class="btn-flat green-text waves-effect waves-green">Aceitar</button>
+                        <button data-target="modalPedidos" class="modal-trigger btn-flat red-text waves-effect waves-red">Negar</button>
+                    </div>
+                </div>
+                    <div class="col s12 m8">
+                        <p><b class="medium">Cliente: </b><span id="nomeCliente">Yagami Raito - Kira</span></p>
+                        <p>Endereço: <span id="endereco">Comandante cowboy rua 12</span></p>
+                        <p>Referência: <span id="referencia">Casa cor de laranja</span></p>
+                    </div>
+                    <div class="col s12 m4">
+                        <span class="new badge green" id="isAccept" data-badge-caption="Entregue"></span>
+                        <span ><b class="medium">Código: </b><span id="codPedido">8209823</span></span>
+                        <p>Data: <span id="dataDeEmissao">19/12/2019</span> às <span id="receptLojaTiime">19:25</span></p>
+                    </div>
+
+                <br>
+                <br>
+                <div class="col s12">
+                    <p>Tempo de Entrega: <span id="tempoDeEntrega">19:50</span></p>
+
+                </div>
+                <br>
+                <br>
 
 
+                <div class="col s12">
+                    <p>Observações: <span id="observacoes" class="red-text"></span></p>
+                    <h6 align="center">LISTA DE PRODUTOS</h6>
 
-            </div>
+                    <table class="highlight">
+                        <thead>
+                        <tr>
+                            <th data-field="item">item</th>
+                            <th data-field="quantidade">Qtd.</th>
+                            <th data-field="preco">Preço</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="itensDoPedido">
+                        </tbody>
+                    </table>
+
+                    <br>
+                </div>
+                <div class="col s7">
+                    <p>Forma de pagamento: <span id="formaDePagamento">Dinheiro</span></p>
+                    <p>Tipo de Entrega: <span id="isPay">Delivery</span></p>
+                </div>
+                <div class="col s5 right-align">
+                    <p>subTotal: <span class="orange-text" id="subTotal">0</span> Akz</p>
+                    <p>taxa de entrega: <span class="orange-text" id="taxaDeEntrega">0</span> Akz</p>
+                    <b>TOTAL: <span class="orange-text" id="total">0</span> Akz</b>
+                    <br>
+                    <br>
+                </div>
 
         </div>
 
@@ -48,3 +89,45 @@
 
 
     </div>
+    <ul id="slide-out" class="sidenav2 sidenav sidenav-fixed z-depth-1-half " style="z-index: auto; margin-top:-30px; max-height: 105%;">
+        <!--<li>
+            <br>
+            <br>
+        </li>
+        <li>
+            <h5>Pedidos</h5>
+            <form class="col s12">
+                <div class="input-field">
+                    <i class="material-icons prefix">search</i>
+                    <input id="icon_prefix2" type="text">
+                    <label for="icon_prefix2">Pesquisar</label>
+                </div>
+            </form>
+        </li>-->
+
+
+
+    </ul>
+
+    <!-- Modal Structure -->
+    <div id="modalPedidos" class="modal">
+            <form name="frmNegarPedido">
+                <div class="modal-content">
+                    <h4 align="center">NEGAR PEDIDO</h4>
+                    <div class="input-field col s12">
+                        <label for="txtNegarPedido" class="active">Texto</label>
+                            <textarea id="txtNegarPedido" name="txtNegarPedido" class="materialize-textarea" placeholder="Explique porque é que negou"></textarea>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="waves-effect orange-text waves-green btn-flat">Voltar</a>
+                    <button type="submit" class="modal-close waves-effect waves-green btn-flat">Enviar</button>
+                </div>
+            </form>
+
+    </div>
+    <!-- Modal Structure -->
+</div>
+
+

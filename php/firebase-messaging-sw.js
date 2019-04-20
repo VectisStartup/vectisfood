@@ -28,6 +28,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
         body: 'Background Message body.',
         icon: '/firebase-logo.png'
     };
+    //document.location.reload(true);
 
     return self.registration.showNotification(notificationTitle,
         notificationOptions);

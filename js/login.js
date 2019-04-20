@@ -70,14 +70,16 @@ class LojaController{
     //email e senha
     login(dados){
         this.servidor.requisitar('GET','/lojas', dados, function () {
-            $('div#LoginProgressBar').show();
+            $('div#LoginProgressBar').toggleClass('hide');
+            $('button#btnLogin').attr('disabled', 'disabled');
         }, function(data, textStatus, xhr){
             sessionStorage.setItem('dadosLoja', xhr.responseText);
             document.location.replace('index.html');
         }, function () {
             $('span#resposta').html('Email ou senha errada');
         }, function () {
-            $('div#LoginProgressBar').hide();
+            $('div#LoginProgressBar').toggleClass('hide');
+            $('button#btnLogin').prop('disabled', false);
         });
     }
 
